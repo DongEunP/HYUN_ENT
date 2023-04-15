@@ -26,7 +26,23 @@ $(function () {
     setTimeout(function () {
       $("video").css({ display: "block" });
       $("body").css({ overflowY: "scroll" });
+      $('move').remove();
     }, 2500);
+  });
+
+  // 마우스커서
+  $(document).mousemove(function(event) {
+    var mouseX = event.pageX;
+    var mouseY = event.pageY;
+    $(".cursor").css({
+      "top": mouseY + 10 + "px",
+      "left": mouseX + 10 + "px"
+    });
+  });
+  $('a,header h1,.gnb ul li,.intro_cir,.fix_cir').hover(function(){
+    $('.cursor').css({backgroundColor:'#DD5D57'});
+  },function(){
+    $('.cursor').css({backgroundColor:'#A58DE3'});
   });
 
   // 스크롤이벤트
