@@ -26,7 +26,7 @@ $(function () {
     setTimeout(function () {
       $("video").css({ display: "block" });
       $("body").css({ overflowY: "scroll" });
-      $('move').remove();
+      $('.move').remove();
     }, 2500);
   });
 
