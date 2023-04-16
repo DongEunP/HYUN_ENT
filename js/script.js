@@ -46,6 +46,21 @@ $(function () {
       $('.cursor').css({backgroundColor:'#A58DE3',scale:'1.3'});
     });
 
+  // 햄버거메뉴
+  $(document).on('click', '.hbg_btn', function() {
+    var $currentItem = $(this);
+  
+    if ($currentItem.hasClass('on')) {
+      $currentItem.removeClass('on');
+      $('.btn_eyes span:first-child,.btn_eyes span:last-child').removeClass('active');
+      $('.hbg_menu').slideUp();
+    } else {
+      $currentItem.addClass('on');
+      $('.btn_eyes span:first-child,.btn_eyes span:last-child').addClass('active');
+      $('.hbg_menu').slideDown();
+    }
+  });
+
   // 스크롤이벤트
   $(window).on("scroll", function () {
     const winTop = $(window).scrollTop(); //윈도우 스크롤값
@@ -76,7 +91,7 @@ $(function () {
     }
 
     // 섹션 이동시 메뉴 색상 변경
-    var $menu = $('.gnb ul li')
+    var $menu = $('.gnb ul li,.hbg_menu ul li')
     $('section').each(function(){
       if($(this).offset().top <= $(window).scrollTop()){
         let index = $(this).index()-2;
@@ -101,7 +116,7 @@ $(function () {
   });
 
   // 메뉴 클릭시 섹션 이동
-  $(".gnb ul li").click(function(event) {
+  $(".gnb ul li,.hbg_menu li").click(function(event) {
     var target = $(this).attr("href"); // 클릭한 메뉴의 href 값을 가져옴
     $("html, body").animate({ // 스크롤링 애니메이션
       scrollTop: $(target).offset().top // 해당 섹션으로 스크롤링

@@ -32,6 +32,7 @@
   .sec01_img{
     width: 80%;
     align-self: flex-end;
+    margin: 0;
   }
   .sec01_bg_bar:not(:last-child){
     margin-bottom: 7%;
@@ -83,6 +84,19 @@
   }
   .txt_rolling p{
     font-size: 80px;
+  }
+  .sec01_info{
+    width: 100%;
+    height: 40%;
+  }
+  .sec01_con{
+    margin-right: 10px;
+  }
+  .info_wrap b{
+    margin: 5% 0;
+  }
+  .info_wrap b:last-child{
+    margin-bottom: 0;
   }
   .info_wrap h2,.title h2{
     font-size: 28px;
