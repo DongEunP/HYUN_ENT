@@ -147,21 +147,51 @@ $(function () {
     }
   });
   //sns 써클
+  // var fixed = false;
+  // $('.fix_cir').click(function(){
+  //   if (!fixed) {
+  //     $('.sns>a:nth-child(1)').animate({top:'-20%'},500);
+  //     $('.sns>a:nth-child(2)').animate({top:'-10%',left:'15%'},400);
+  //     $('.sns>a:nth-child(3)').animate({top:'15%',left:'-10%'},300);
+  //     $('.sns>a:nth-child(4)').animate({top:'50%',left:'-20%'},200);
+  //   } else {
+  //     $('.sns>a:nth-child(1)').animate({top:'50%'},500);
+  //     $('.sns>a:nth-child(2)').animate({top:'50%',left:'50%'},400);
+  //     $('.sns>a:nth-child(3)').animate({top:'50%',left:'50%'},300);
+  //     $('.sns>a:nth-child(4)').animate({top:'50%',left:'50%'},200);
+  //   }
+  //   fixed = !fixed;
+  // })
   var fixed = false;
-  $('.fix_cir').click(function(){
-    if (!fixed) {
+
+$('.fix_cir').click(function(){
+  if (!fixed) {
+    if ($(window).width() >= 680) { // 미디어 쿼리 추가
       $('.sns>a:nth-child(1)').animate({top:'-20%'},500);
       $('.sns>a:nth-child(2)').animate({top:'-10%',left:'15%'},400);
       $('.sns>a:nth-child(3)').animate({top:'15%',left:'-10%'},300);
       $('.sns>a:nth-child(4)').animate({top:'50%',left:'-20%'},200);
-    } else {
+    }else{
+      $('.sns>a:nth-child(1)').animate({top:'-30%'},500);
+      $('.sns>a:nth-child(2)').animate({top:'-100%'},400);
+      $('.sns>a:nth-child(3)').animate({top:'-170%'},300);
+      $('.sns>a:nth-child(4)').animate({top:'-240%'},200);
+    }
+  } else {
+    if ($(window).width() >= 680) { // 미디어 쿼리 추가
       $('.sns>a:nth-child(1)').animate({top:'50%'},500);
       $('.sns>a:nth-child(2)').animate({top:'50%',left:'50%'},400);
       $('.sns>a:nth-child(3)').animate({top:'50%',left:'50%'},300);
       $('.sns>a:nth-child(4)').animate({top:'50%',left:'50%'},200);
+    }else{
+      $('.sns>a:nth-child(1)').animate({top:'50%'},500);
+      $('.sns>a:nth-child(2)').animate({top:'50%'},400);
+      $('.sns>a:nth-child(3)').animate({top:'50%'},300);
+      $('.sns>a:nth-child(4)').animate({top:'50%'},200);
     }
-    fixed = !fixed;
-  })
+  }
+  fixed = !fixed;
+});
 
 
   ///////
