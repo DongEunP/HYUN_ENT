@@ -1,4 +1,5 @@
-body{cursor: none;} .cursor{ 
+body{cursor: none;} 
+.cursor{ 
   width: 20px; 
   height: 20px; 
   background-color: #A58DE3;
@@ -150,12 +151,16 @@ nav{
   0%{scale: 0; opacity: 0;}
   100%{scale: 3; opacity: 1;}
 }
+.intro_video{
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
 video{
   width: 100vw;
   height: 100%;
   object-fit: cover;
   object-position: 50%;
-  display: none;
   position: relative;
   top: 0;
   left: 0;
@@ -166,7 +171,8 @@ video{
 section{
   width: 100%;
   height: 100vh;
-  background-color: black;
+  padding-bottom: 130px;
+  background-color: #000;
 }
 
 /* 섹션1 */
@@ -333,4 +339,108 @@ footer{
   left: 50%;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
   border-radius: 50%;
+}
+
+/* 섹션2 */
+.sec02 .title{
+  width: 100%;
+  height: 20vh;
+  background: linear-gradient( #000 20%,rgba(225,225,225,.1));
+  color: #fff;
+  text-align: center;
+  padding-top: 3%;
+}
+.title h2{
+  font-size: 2vw;
+  margin-bottom: 30px;
+  opacity: 0;
+}
+.title h2.show{
+  animation: up .5s linear forwards;
+}
+.title p{
+  opacity: 0;
+}
+.title p.show{
+  animation: up .5s linear forwards;
+}
+@keyframes up {
+  0%{transform: translateY(70px);opacity: 0;}
+  100%{transform: translateY(0);opacity: 1;}
+}
+.sec02_con{
+  width: 100%;
+  display: flex;
+}
+.con_item{
+  width: 20%;
+  height: 80vh;
+  color: #fff;
+  padding: 5% 3%;
+  text-align: center;
+  transition: .5s;
+}
+.con_item:hover{
+  background-color: rgba(225,225,225,.1);
+} 
+.con_item:hover img{
+  filter: grayscale(0);
+  scale: 1;
+}
+.con_item h3{
+  font-size: 1.5vw;
+}
+.con_item.on{
+  position: relative;
+  width: 100%;
+
+}
+.con_item.on .item_wrap{
+  display: flex;
+}
+.con_item.on .con_img{
+  width: 50%;
+  height: 70%;
+}
+.con_item.on .con_txt{
+  display: block;
+  transition: 1s;
+}
+.item_wrap{
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+.con_img{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: 5% 0;
+}
+.con_img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50%;
+  filter:grayscale(100) ;
+  transition: 1s;
+  scale: .95;
+}
+.con_txt{
+  display: none;
+  text-align: left;
+  margin-left: 10%;
+}
+.con_txt b{
+  display: inline-block;
+  font-size: 1.25vw;
+  margin: 10% 0 3% 0;
+}
+.con_txt b:first-child{
+  margin-top: 0;
+}
+.con_txt p{
+  margin-left: 5px;
 }
