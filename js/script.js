@@ -93,7 +93,7 @@ $(function () {
     // 섹션 이동시 메뉴 색상 변경
     var $menu = $('.gnb ul li,.hbg_menu ul li')
     $('section').each(function(){
-      if($(this).offset().top <= $(window).scrollTop()){
+      if($(this).offset().top - 50 <= $(window).scrollTop()){
         let index = $(this).index()-2;
         $menu.removeClass('on')
         $menu.eq(index).addClass('on');
@@ -119,7 +119,7 @@ $(function () {
   $(".gnb ul li,.hbg_menu li").click(function(event) {
     var target = $(this).attr("href"); // 클릭한 메뉴의 href 값을 가져옴
     $("html, body").animate({ // 스크롤링 애니메이션
-      scrollTop: $(target).offset().top // 해당 섹션으로 스크롤링
+      scrollTop: $(target).position().top // 해당 섹션으로 스크롤링
     }, 500); // 애니메이션 시간 (0.8초)
   });
   // 로고 클릭시 상단 이동
@@ -193,6 +193,23 @@ $('.fix_cir').click(function(){
   fixed = !fixed;
 });
 
+  //아티스트 스와이퍼
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 10,
+    slidesPerView: 3,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+  var swiper2 = new Swiper(".mySwiper2", {
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper,
+    },
+  });
 
   ///////
 });
