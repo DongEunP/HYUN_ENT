@@ -59,9 +59,29 @@
     font-size: 18px;
     margin-top: 20px !important;
   }
+  
+  .scr_txt p{
+    width: 80%;
+    font-size: 3rem;
+  }
+  .artist{
+    flex-direction: column;
+  }
+  .art_img{
+    width: 50%;
+  }
+  .art_sel{
+    flex-wrap: nowrap;
+  }
+  .art_sel>div{
+    margin-top: 10% !important;
+  }
 }
 
 @media (max-width:680px) {
+  section{
+    padding-bottom: 80px;
+  }
   .cursor{
     display: none;
   }
@@ -137,5 +157,23 @@
   }
   .plan li{
     width: 100% !important;
+  }
+
+  /* 아티스트 */
+  .sec03 h2{
+    font-size: 29vw;
+  }
+  .scr_vedio{
+    text-align: center;
+  }
+  .scr_txt p{
+    font-size: 2rem;
+  }
+  .artist{
+    margin-top: 20px;
+    padding: 0 2%;
+  }
+  .swiper-button-next, .swiper-button-prev{
+    display: none !important;
   }
 }

@@ -535,7 +535,7 @@ footer{
 /* 섹션3 */
 .sec03{
   width: 100%;
-
+  height: fit-content;
 }
 .scr_txt{
   width: 100%;
@@ -611,6 +611,8 @@ footer{
   position: absolute;
   height: 40%;
   bottom: 0;
-  background: linear-gradient(rgba(0,0,0,.3),rgba(225,225,225,.3));
   color: #fff;
+}
+.txt_box p{
+  padding: 0 2%;
 }
