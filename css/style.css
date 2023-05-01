@@ -1,3 +1,4 @@
+/* html{width: fit-content;} */
 body{cursor: none;} 
 .cursor{ 
   width: 20px; 
@@ -253,7 +254,7 @@ video{
 
 /* 섹션공통 */
 section{
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   padding-bottom: 130px;
   background-color: #000;
@@ -395,10 +396,10 @@ section{
 }
 
 /* 푸터 */
-footer{
+/* footer{
   width: 100vw;
   height: 15vw;
-}
+} */
 .sns_cir{
   width: 200px;
   height: 200px;
@@ -534,7 +535,6 @@ footer{
 
 /* 섹션3 */
 .sec03{
-  width: 100%;
   height: fit-content;
 }
 .scr_txt{
@@ -615,4 +615,120 @@ footer{
 }
 .txt_box p{
   padding: 0 2%;
+}
+
+/* 파트너 */
+.sec04{
+  text-align: center;
+  border-radius: 0 0 10% 10%;
+  height: fit-content;
+}
+.sec04 h2{
+  font-size: 4rem;
+  color: #fff;
+}
+.partner{
+  display: flex;
+  margin-top: 100px;
+}
+.partner img{
+  width: 40%;
+}
+.part_item{
+  color: #fff;
+}
+
+/* 컨택트 */
+.sec05{
+  width: 100%;
+  height: 100%;
+  margin: 70px auto 0 auto;
+  padding: 0 15% 70px 15%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  /* position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: -1000; */
+}
+.sec05_con{
+  display: flex;
+  justify-content: space-between;
+}
+.sec05 h2{
+  font-size: 4rem;
+}
+.sec05_title{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+
+}
+.sec05_title>div{
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  margin-left: 20px;
+}
+.sec05_map{
+  width: 50%;
+  height: 100%;
+}
+.sec05_map iframe{
+  width: 100%;
+  height: 700px;
+}
+.sec05_con form{
+  padding: 0 5%;
+}
+input[type="text"],input[type="email"],textarea{
+  width: 100%;
+  text-indent: 10px;
+}
+input[type="text"],input[type="email"]{
+  height: 40px;
+  margin: 10px 0;
+}
+textarea{
+  margin-top: 30px;
+  padding: 10px 0;
+}
+.inquiry{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.inquiry>div{
+  width: 50%;
+  margin: 10px 0;
+}
+.send{
+  text-align: center;
+}
+.check{
+  margin: 10px 0;
+}
+.send button{
+  width: 20%;
+  height: 50px;
+  border: none;
+  background-color: #000;
+  border-radius: 10px;
+  color: #fff;
+}
+.sec05_bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #fff;
 }

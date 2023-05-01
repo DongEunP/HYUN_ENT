@@ -66,6 +66,7 @@
   }
   .artist{
     flex-direction: column;
+    padding: 0;
   }
   .art_img{
     width: 50%;
@@ -75,6 +76,24 @@
   }
   .art_sel>div{
     margin-top: 10% !important;
+  }
+
+  .sec05{
+    padding: 0 5% 70px 5%;
+  }
+  .sec05_con{
+    flex-direction: column;
+  }
+  .sec05_map{
+    width: 100%;
+    
+  }
+  .sec05_map iframe{
+    height: 300px;
+  }
+  .sec05 form{
+    padding: 0;
+    margin-top: 30px;
   }
 }
 
