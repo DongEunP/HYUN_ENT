@@ -2,6 +2,11 @@
   .fix_cir, .sns{
     scale: .8;
   }
+  .gnb{display: none;}
+  .hbg{display: block;}
+  .cursor{
+    display: none;
+  }
   .gnb ul li{
     font-size: 18px;
   }
@@ -92,7 +97,7 @@
     height: 300px;
   }
   .sec05 form{
-    padding: 0;
+    margin: 0;
     margin-top: 30px;
   }
 }
@@ -101,12 +106,8 @@
   section{
     padding-bottom: 80px;
   }
-  .cursor{
-    display: none;
-  }
   *{font-size: 10px;}
-  .gnb{display: none;}
-  .hbg{display: block;}
+
   .intro_video{
     background-color: #000;
   }
