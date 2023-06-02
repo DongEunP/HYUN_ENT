@@ -4,49 +4,55 @@ $(function () {
       $("html, body").scrollTop(0);
     }, 100);
   });
-  $(".intro_cir").on("click", function () {
-    // intro 클래스를 가진 div의 클릭 이벤트 핸들러 설정
-    var parentDiv = $(".intro_ani"); // 클릭한 intro 클래스를 가진 div 요소
-    var count = 0; // 생성된 move 클래스를 가진 div 요소의 개수 카운트 변수
-    var interval = setInterval(function () {
-      // 0.2초 간격으로 실행될 코드 설정
-      if (count < 5) {
-        // 5개의 move 클래스를 가진 div 요소를 생성하면 종료
-        var divElement = $("<div>").addClass("move"); // 새로운 div 요소 생성 및 클래스와 텍스트 설정
-        parentDiv.append(divElement); // 생성한 div 요소를 클릭한 intro 클래스를 가진 div 요소의 자식으로 추가
-        count++; // 생성된 move 클래스를 가진 div 요소의 개수 증가
-      } else {
-        clearInterval(interval); // 5개의 move 클래스를 가진 div 요소를 모두 생성하면 setInterval 종료
-      }
-    }, 200); // 0.2초(200ms) 설정
+  $(document).ready(function () {
     setTimeout(function () {
-      // 1초 뒤에 실행될 코드 설정
-      $(".intro_cir").fadeOut(); // intro_cir 클래스를 가진 div 요소를 페이드아웃 처리
-    }, 500); // 1초(1000ms) 설정
-    setTimeout(function () {
-      $(".intro_video").css({ display: "block" });
-      $("body").css({ overflowY: "scroll" });
-      $(".move").remove();
-    }, 2500);
+      // intro 클래스를 가진 div의 클릭 이벤트 핸들러 설정
+      var parentDiv = $(".intro_ani"); // 클릭한 intro 클래스를 가진 div 요소
+      var count = 0; // 생성된 move 클래스를 가진 div 요소의 개수 카운트 변수
+      var interval = setInterval(function () {
+        // 0.2초 간격으로 실행될 코드 설정
+        if (count < 5) {
+          // 5개의 move 클래스를 가진 div 요소를 생성하면 종료
+          var divElement = $("<div>").addClass("move"); // 새로운 div 요소 생성 및 클래스와 텍스트 설정
+          parentDiv.append(divElement); // 생성한 div 요소를 클릭한 intro 클래스를 가진 div 요소의 자식으로 추가
+          count++; // 생성된 move 클래스를 가진 div 요소의 개수 증가
+        } else {
+          clearInterval(interval); // 5개의 move 클래스를 가진 div 요소를 모두 생성하면 setInterval 종료
+        }
+      }, 200); // 0.2초(200ms) 설정
+      setTimeout(function () {
+        // 1초 뒤에 실행될 코드 설정
+        $(".intro_cir").fadeOut(); // intro_cir 클래스를 가진 div 요소를 페이드아웃 처리
+      }, 500); // 1초(1000ms) 설정
+      setTimeout(function () {
+        $(".intro_video").css({ display: "block" });
+        $("body").css({ overflowY: "scroll" });
+        $(".move").remove();
+      }, 2500);
+    }, 1000);
   });
+  
+  // $(".intro_cir").on("click", function () {
+
+  // });
 
   // 마우스커서
-  $(document).mousemove(function (event) {
-    var mouseX = event.pageX;
-    var mouseY = event.pageY;
-    $(".cursor").css({
-      top: mouseY + 10 + "px",
-      left: mouseX + 10 + "px",
-    });
-  });
-  $("a,header h1,.gnb ul li,.intro_cir,.fix_cir,.con_item").hover(
-    function () {
-      $(".cursor").css({ backgroundColor: "#DD5D57", scale: "1.6" });
-    },
-    function () {
-      $(".cursor").css({ backgroundColor: "#A58DE3", scale: "1.3" });
-    }
-  );
+  // $(document).mousemove(function (event) {
+  //   var mouseX = event.pageX;
+  //   var mouseY = event.pageY;
+  //   $(".cursor").css({
+  //     top: mouseY + 10 + "px",
+  //     left: mouseX + 10 + "px",
+  //   });
+  // });
+  // $("a,header h1,.gnb ul li,.intro_cir,.fix_cir,.con_item").hover(
+  //   function () {
+  //     $(".cursor").css({ backgroundColor: "#DD5D57", scale: "1.6" });
+  //   },
+  //   function () {
+  //     $(".cursor").css({ backgroundColor: "#A58DE3", scale: "1.3" });
+  //   }
+  // );
 
   // 햄버거메뉴
   $(document).on("click", ".hbg_btn", function () {
@@ -88,19 +94,33 @@ $(function () {
     }
     // 섹션1 백그라운드 스크롤 이벤트
     var scrollTop = $(window).scrollTop();
-    var sec01Top = $(".sec01").offset().top - 500;
+    var sec01Top = $(".sec01").offset().top - 300;
 
     // 윈도우 스크롤 top 값이 .sec01의 offset().top - 500 위치에 도달했을 때
+    // if (scrollTop >= sec01Top) {
+    //   // .sec01_bg 안에 div 태그 10개 생성
+    //   if ($(".sec01_bg div").length === 0) {
+    //     for (var i = 0; i < 10; i++) {
+    //       var bgBar = $("<div>").addClass("sec01_bg_bar");
+    //       bgBar.appendTo(".sec01_bg");
+    //     }
+    //   }
+    // } else if (winTop === 0) {
+    //   $(".sec01_bg div").remove();
+    // }
+
+    // 현엔터 스크롤이벤트
     if (scrollTop >= sec01Top) {
-      // .sec01_bg 안에 div 태그 10개 생성
-      if ($(".sec01_bg div").length === 0) {
-        for (var i = 0; i < 10; i++) {
-          var bgBar = $("<div>").addClass("sec01_bg_bar");
-          bgBar.appendTo(".sec01_bg");
-        }
-      }
-    } else if (winTop === 0) {
-      $(".sec01_bg div").remove();
+      $('.sec01_info').fadeIn()
+    }else{
+      $('.sec01_info').fadeOut()
+    }
+
+    // 컨택트 이벤트
+    if(scrollTop>=$('.sec05').offset().top-300){
+      $('.sec05_title > div').animate({'width':'100%'});
+    }else{
+      $('.sec05_title > div').css({'width':'0'});
     }
 
     // 섹션 이동시 메뉴 색상 변경
@@ -217,112 +237,109 @@ $(function () {
 
   //아티스트 스와이퍼
   var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 10,
+    spaceBetween: 20,
     slidesPerView: 3,
     freeMode: true,
     watchSlidesProgress: true,
   });
   var swiper2 = new Swiper(".mySwiper2", {
     spaceBetween: 10,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+    navigation: false,
     thumbs: {
       swiper: swiper,
     },
   });
 
   // 메인 백그라운드
-  $(function bgCir() {
-    const cir1 = document.createElement("div");
-    cir1.classList.add("bg_cir");
-    gsap.set(cir1, {
-      width: 200,
-      height: 200,
-      border: "solid 1px #000",
-      borderRadius: "50%",
-      position: "absolute",
-      top: "30%",
-      left: "20%",
-    });
-    const cir2 = document.createElement("div");
-    cir2.classList.add("bg_cir");
-    gsap.set(cir2, {
-      width: 150,
-      height: 150,
-      background: "#000",
-      borderRadius: "50%",
-      position: "absolute",
-      top: "5%",
-      left: "90%",
-    });
-    const cir3 = document.createElement("div");
-    cir3.classList.add("bg_cir");
-    gsap.set(cir3, {
-      width: 300,
-      height: 300,
-      background: "#000",
-      borderRadius: "50%",
-      position: "absolute",
-      top: "30%",
-      left: "40%",
-    });
-    const cir4 = document.createElement("div");
-    cir4.classList.add("bg_cir");
-    gsap.set(cir4, {
-      width: 100,
-      height: 100,
-      background: "gray",
-      borderRadius: "50%",
-      position: "absolute",
-      top: "52%",
-      left: "10%",
-    });
-    const cir5 = document.createElement("div");
-    cir5.classList.add("bg_cir");
-    gsap.set(cir5, {
-      width: 250,
-      height: 250,
-      border: "solid 1px #000",
-      borderRadius: "50%",
-      position: "absolute",
-      top: "80%",
-      left: "-10%",
-    });
-    const cir7 = document.createElement("div");
-    cir7.classList.add("bg_cir");
-    gsap.set(cir7, {
-      width: 100,
-      height: 100,
-      border: "solid 1px #4d98f0",
-      borderRadius: "50%",
-      position: "absolute",
-      top: "5%",
-      left: "5%",
-    });
-    const cir10 = document.createElement("div");
-    cir10.classList.add("bg_cir");
-    gsap.set(cir10, {
-      width: 100,
-      height: 100,
-      border: "solid 1px #4d98f0",
-      borderRadius: "50%",
-      position: "absolute",
-      top: "60%",
-      left: "95%",
-    });
+  // $(function bgCir() {
+  //   const cir1 = document.createElement("div");
+  //   cir1.classList.add("bg_cir");
+  //   gsap.set(cir1, {
+  //     width: 200,
+  //     height: 200,
+  //     border: "solid 1px #000",
+  //     borderRadius: "50%",
+  //     position: "absolute",
+  //     top: "30%",
+  //     left: "20%",
+  //   });
+  //   const cir2 = document.createElement("div");
+  //   cir2.classList.add("bg_cir");
+  //   gsap.set(cir2, {
+  //     width: 150,
+  //     height: 150,
+  //     background: "#000",
+  //     borderRadius: "50%",
+  //     position: "absolute",
+  //     top: "5%",
+  //     left: "90%",
+  //   });
+  //   const cir3 = document.createElement("div");
+  //   cir3.classList.add("bg_cir");
+  //   gsap.set(cir3, {
+  //     width: 300,
+  //     height: 300,
+  //     background: "#000",
+  //     borderRadius: "50%",
+  //     position: "absolute",
+  //     top: "30%",
+  //     left: "40%",
+  //   });
+  //   const cir4 = document.createElement("div");
+  //   cir4.classList.add("bg_cir");
+  //   gsap.set(cir4, {
+  //     width: 100,
+  //     height: 100,
+  //     background: "gray",
+  //     borderRadius: "50%",
+  //     position: "absolute",
+  //     top: "52%",
+  //     left: "10%",
+  //   });
+  //   const cir5 = document.createElement("div");
+  //   cir5.classList.add("bg_cir");
+  //   gsap.set(cir5, {
+  //     width: 250,
+  //     height: 250,
+  //     border: "solid 1px #000",
+  //     borderRadius: "50%",
+  //     position: "absolute",
+  //     top: "80%",
+  //     left: "-10%",
+  //   });
+  //   const cir7 = document.createElement("div");
+  //   cir7.classList.add("bg_cir");
+  //   gsap.set(cir7, {
+  //     width: 100,
+  //     height: 100,
+  //     border: "solid 1px #4d98f0",
+  //     borderRadius: "50%",
+  //     position: "absolute",
+  //     top: "5%",
+  //     left: "5%",
+  //   });
+  //   const cir10 = document.createElement("div");
+  //   cir10.classList.add("bg_cir");
+  //   gsap.set(cir10, {
+  //     width: 100,
+  //     height: 100,
+  //     border: "solid 1px #4d98f0",
+  //     borderRadius: "50%",
+  //     position: "absolute",
+  //     top: "60%",
+  //     left: "95%",
+  //   });
 
-    const sec01 = $(".sec05_bg");
+  //   const sec01 = $(".sec05_bg");
 
-    sec01.append(cir1);
-    sec01.append(cir2);
-    sec01.append(cir3);
-    sec01.append(cir4);
-    sec01.append(cir5);
-    sec01.append(cir7);
-    sec01.append(cir10);
-  });
+  //   sec01.append(cir1);
+  //   sec01.append(cir2);
+  //   sec01.append(cir3);
+  //   sec01.append(cir4);
+  //   sec01.append(cir5);
+  //   sec01.append(cir7);
+  //   sec01.append(cir10);
+  // });
 
   $(function initEvent() {
     const cir = document.querySelectorAll(".bg_cir");
