@@ -18,6 +18,20 @@ body {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); */
   /* background-color: #DD5D57; */
 }
+body::-webkit-scrollbar {
+  width: 8px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 5%; /* 스크롤바의 길이 */
+  background: #fff; /* 스크롤바의 색상 */
+  
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.9)  /*스크롤바 뒷 배경 색상*/
+}
 * {
   margin: 0;
   padding: 0;
@@ -189,7 +203,7 @@ nav {
   display: none;
   position: absolute;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   left: 0;
   background-color: rgba(0, 0, 0, 0.9);
 }
@@ -590,7 +604,6 @@ section {
   }
   100% {
     scale: 0.95;
-    border-radius: 30px;
     filter: grayscale(0);
   }
 }
@@ -686,10 +699,11 @@ section {
 .scr_vedio {
   font-size: 20vw;
   -webkit-text-fill-color: transparent;
-  background-image: url(../img/sec03_demo.gif);
+  background-image: url(../img/bg_vedio.gif);
   -webkit-background-clip: text;
   background-size: 100%;
   background-attachment: fixed;
+  background-position: -20%;
 }
 .artist {
   width: 100%;
@@ -757,6 +771,57 @@ section {
 }
 .txt_box p {
   padding: 0 2%;
+}
+
+/* 조직도 */
+.organize{
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  height: fit-content;
+}
+.organize>fieldset{
+  width: 70%;
+  margin: 25px auto;
+  padding: 30px;
+}
+.organize>fieldset>div{
+  display: flex;
+  justify-content: space-between;
+}
+.org_icon{
+  background-color: #fff;
+  color: #000;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.org_wrap{
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.org_wrap>fieldset{
+  margin: 25px 0;
+  padding: 30px;
+}
+.organize h2{
+  font-size: 4rem;
+  margin: 100px 0;
+}
+.organize h3{
+  margin-bottom: 30px;
+}
+.organize legend{
+  padding: 0 20px;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+.organize img{
+  width: 40%;
 }
 
 /* 파트너 */

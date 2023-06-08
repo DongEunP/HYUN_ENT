@@ -118,9 +118,10 @@
   .intro_cir{
     margin: 0;
   }
-  .fix_cir, .sns{
-    scale: .3;
-    margin: 70px 0 0 70px;
+  .sns_cir{
+    scale: .4;
+    bottom: -40px;
+    right: -40px;
   }
   .sns a{
     scale: 2;
@@ -195,5 +196,22 @@
   }
   .swiper-button-next, .swiper-button-prev{
     display: none !important;
+  }
+
+  /* 조직도 */
+  .org_wrap{
+    flex-wrap: wrap;
+  }
+  .organize>fieldset>div{
+    flex-wrap: wrap;
+  }
+  .organize>fieldset,.org_wrap{
+    width: 90%;
+  }
+  fieldset,.org_item{
+    width: 100%;
+  }
+  .org_icon{
+    justify-content: space-between;
   }
 }
