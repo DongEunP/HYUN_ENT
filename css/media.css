@@ -111,7 +111,7 @@
   .intro_video{
     background-color: #000;
   }
-  video{
+  .main_vs{
     height: 80%;
     transform: translateY(10%);
   }
