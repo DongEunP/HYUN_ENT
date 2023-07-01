@@ -971,3 +971,89 @@ textarea {
   z-index: -1;
   background-color: #fff;
 }
+.send_pop_bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999999;
+  top: 0;
+  display: none;
+}
+.send_pop_bg .send_pop{
+  position: absolute;
+  width: 300px;
+  height: 180px;
+  border-radius: 20px;
+  background-color: white;
+  color: #000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.send_pop_bg .send_pop b{
+  font-size: 1.25rem;
+}
+.send_pop_bg .send_pop p{
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+}
+.send_pop_close{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.send_pop_close div{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.send_pop_close>div{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(45.36deg, #ECA658 0%, #F391A6 13.02%, #E188C3 25.52%, #A58DE3 37.5%, #56ABEC 49.48%, #737EB7 63.02%, #C8638C 72.92%, #DD5D57 84.38%, #DF6C51 97.92%);
+}
+.send_pop_close>div>div{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+}
+.send_pop_close>div>div::after {
+  position : absolute;
+  top : 4.5px;
+  left : 4.5px;
+  content : '';
+  display: block;
+  width : 10px;
+  height : 10px;
+  border-radius : 50%;
+  border : 1px solid rgba(0, 0, 0, 0.3);
+  transition : all .1s;
+  opacity : 0;
+}
+.send_pop_close>div>div.close::after{
+  -webkit-animation : circle .5s;
+  animation : circle .5s;
+}
+@-webkit-keyframes circle {
+  0% {-webkit-transform : scale(0.1); opacity : 0;}
+  50% {opacity : 1;}
+  100% {-webkit-transform : scale(5); opacity : 0;}
+}
+@keyframes circle {
+  0% {transform : scale(0.1); opacity : 0;}
+  50% {opacity : 1;}
+  100% {transform : scale(5); opacity : 0;
+  }
+}
