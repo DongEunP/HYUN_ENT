@@ -978,6 +978,7 @@ textarea {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 9999999;
   top: 0;
+  left: 0;
   display: none;
 }
 .send_pop_bg .send_pop{
